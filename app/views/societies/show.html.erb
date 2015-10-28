@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @society.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @society.address %>
+</p>
+
+<p>
+  <strong>Pincode:</strong>
+  <%= @society.pincode %>
+</p>
+
+<p>
+  <strong>Est date:</strong>
+  <%= @society.est_date %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @society.start_date %>
+</p>
+
+<p>
+  <strong>Builder:</strong>
+  <%= @society.builder %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @society.area %>
+</p>
+
+<%= link_to 'Edit', edit_society_path(@society) %> |
+<%= link_to 'Back', societies_path %>
