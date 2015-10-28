@@ -4,7 +4,7 @@ class SocietiesController < ApplicationController
   # GET /societies
   # GET /societies.json
   def index
-    @societies = Society.all
+    @society_all = Society.all
   end
 
   # GET /societies/1
