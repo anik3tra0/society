@@ -1,45 +1,20 @@
-<%= form_for(@society) do |f| %>
-  <% if @society.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@society.errors.count, "error") %> prohibited this society from being saved:</h2>
+<%= simple_form_for @society, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@society[:name]) %>
+  <%= f.input :address %>
+  <%= error_span(@society[:address]) %>
+  <%= f.input :pincode %>
+  <%= error_span(@society[:pincode]) %>
+  <%= f.input :est_date %>
+  <%= error_span(@society[:est_date]) %>
+  <%= f.input :start_date %>
+  <%= error_span(@society[:start_date]) %>
+  <%= f.input :builder %>
+  <%= error_span(@society[:builder]) %>
+  <%= f.input :area %>
+  <%= error_span(@society[:area]) %>
 
-      <ul>
-      <% @society.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="field">
-    <%= f.label :pincode %><br>
-    <%= f.text_field :pincode %>
-  </div>
-  <div class="field">
-    <%= f.label :est_date %><br>
-    <%= f.date_select :est_date %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :builder %><br>
-    <%= f.text_field :builder %>
-  </div>
-  <div class="field">
-    <%= f.label :area %><br>
-    <%= f.text_field :area %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                societies_path, :class => 'btn btn-default' %>
 <% end %>
