@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029114219) do
+ActiveRecord::Schema.define(version: 20151029131433) do
+
+  create_table "permissions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "societies", force: :cascade do |t|
     t.string   "name"
@@ -37,7 +51,6 @@ ActiveRecord::Schema.define(version: 20151029114219) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "role"
-    t.integer  "society_id"
     t.boolean  "status",                 default: true
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
