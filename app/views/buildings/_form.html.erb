@@ -1,0 +1,12 @@
+<%= simple_form_for @building, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.collection_select :society_id, Society.all, :id, :name, prompt: "Select Society" %>
+  <%= error_span(@building[:society_id]) %>
+  <%= f.input :name %>
+  <%= error_span(@building[:name]) %>
+  <%= f.input :area %>
+  <%= error_span(@building[:area]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                buildings_path, :class => 'btn btn-default' %>
+<% end %>

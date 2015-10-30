@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :buildings
   devise_for :users
   root 'societies#index'
   resources :societies
