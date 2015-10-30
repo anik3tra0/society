@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  society_id: 1
+  name: MyString
+  area: 1.5
+
+two:
+  society_id: 1
+  name: MyString
+  area: 1.5
