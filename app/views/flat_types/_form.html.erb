@@ -1,0 +1,12 @@
+<%= simple_form_for @flat_type, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@flat_type[:name]) %>
+  <%= f.input :area %>
+  <%= error_span(@flat_type[:area]) %>
+  <%= f.input :status %>
+  <%= error_span(@flat_type[:status]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                flat_types_path, :class => 'btn btn-default' %>
+<% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :flat_types
+  resources :flats
   resources :buildings
   devise_for :users
   root 'societies#index'

@@ -1,0 +1,18 @@
+<%= simple_form_for @flat, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.collection_select :building_id, Building.all, :id, :name, prompt: "Select Building" %>
+  <%= error_span(@flat[:building_id]) %>
+  <%= f.collection_select :flat_type_id, FlatType.all, :id, :name, prompt: "Select Flat Type" %>
+  <%= error_span(@flat[:flat_type_id]) %>
+  <%= f.input :number %>
+  <%= error_span(@flat[:number]) %>
+  <%= f.input :user_id %>
+  <%= error_span(@flat[:user_id]) %>
+  <%= f.input :flat_status, label: "Check if inactive" %>
+  <%= error_span(@flat[:flat_status]) %>
+  <%= f.input :owner_id %>
+  <%= error_span(@flat[:owner_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                flats_path, :class => 'btn btn-default' %>
+<% end %>
